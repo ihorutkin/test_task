@@ -1,0 +1,19 @@
+{
+  "name": "programming_task",
+  "version": "1.0.0",
+  "description": "It is first test app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "node",
+    "jss"
+  ],
+  "author": "Ihor Utkin <igorutkin2002@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
