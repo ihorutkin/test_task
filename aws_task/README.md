@@ -24,9 +24,9 @@ Repository should also contain a README.md with URLs to your API GET & POST meth
 
 
 
-GET: https://w4tqskhmw2.execute-api.us-east-1.amazonaws.com/Dev/users/f21b7353-55a0-4832-a8d4-6b3ab2fdb191
+GET: https://w4tqskhmw2.execute-api.us-east-1.amazonaws.com/Dev/users/{user_id}
 
-POST: https://w4tqskhmw2.execute-api.us-east-1.amazonaws.com/Dev/insertuser/123456789
+POST: https://w4tqskhmw2.execute-api.us-east-1.amazonaws.com/Dev/insertuser/
 
 POST body: 
 
