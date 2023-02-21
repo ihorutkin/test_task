@@ -1,0 +1,16 @@
+{
+  "name": "postlambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postLambda.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ihor Utkin",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1319.0",
+    "uuid": "^9.0.0"
+  }
+}
