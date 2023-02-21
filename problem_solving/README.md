@@ -6,6 +6,12 @@ User reports that after creating a recipe, it is not returned when searching by 
 
 Your task is to find the root cause of this issue, fix it and describe your debugging process.
 
+# Answer
+
+In this problem solving, it's best if you wrote at the beginning that the main problem was that queryParameters was not passed to query sql
+And the second was that it also worked badly if you did not give any querry
+
+And those other changes you've made are additional upgrades
 
 # index.ts
 
