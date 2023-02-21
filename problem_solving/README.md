@@ -18,7 +18,7 @@ let statusCode = 200
 
 ```
 
-W zaleznosci od tego co mam w recipe chce zwrócić inny status code
+Depending on what I have in the recipe, I want to return a different status code
 
 # requestParser
 
@@ -27,10 +27,22 @@ W zaleznosci od tego co mam w recipe chce zwrócić inny status code
 import { Recipe } from "../types/recipe";
 
 export function recipeQueryParser(query: Record<string, string>) {
-  const parsedQuery: Record<string, unknown> = query;
+  const parsedQuery: Record<string, unknown> = {};
 
   if (query.time) {
     parsedQuery.time = Number(query.time);
+  }
+  if (query.id) {
+    parsedQuery.id = query.id;
+  }
+  if (query.authorId) {
+    parsedQuery.authorId = query.authorId;
+  }
+  if (query.title) {
+    parsedQuery.title = query.title;
+  }
+  if (query.createdDate) {
+    parsedQuery.createdDate = query.createdDate;
   }
 
   return parsedQuery as Recipe;
@@ -38,7 +50,7 @@ export function recipeQueryParser(query: Record<string, string>) {
 
 ```
 
-Tutaj zmiana tylko tego, żeby przyjmowało całe querry, a nie tylko time const parsedQuery: Record<string, unknown> = query;
+Here the only change is that it accepts the whole query, not just time const parsedQuery: Record<string, unknown> = query;
 
 # db.ts
 
@@ -54,7 +66,7 @@ let sqlQuery: string
 
 ```
 
-Po to, że gdy nie ma querry to po prost ma wziąć all
+Because when there is no querry, he just has to take all
 
 ```js
 
@@ -62,7 +74,7 @@ async add(tableName: string, input: Recipe): Promise<Recipe | {errorMessage: str
 
 ```
 
-Zmieniam typ tutaj
+I'm changing the type here
 
 ```js
 
@@ -70,7 +82,7 @@ Zmieniam typ tutaj
 
 ```
 
-tutaj inny format daty, taki jak był bazowo w tej bazie danych, dołączonej w zadaniu
+Here a different date format, as it was in the base in this database, attached in the task
 
 ```js
 
@@ -80,7 +92,7 @@ if (!isEqual([ 'authorId', 'createdDate', 'id', 'time', 'title' ], sql.columns.s
 
 ```
 
-Tutaj sprawdzanie czy dobre body
+Here is checking if the body is good
 
 ```js
 
@@ -100,4 +112,4 @@ this.db.run(sqlQuery, sql.params, (err) => {
 
 ```
 
-tutaj dodałem zwracanie tego co zostało wrzucone
+Here I added returning what was thrown
